@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html ng-app="githubViewerModule">
+
+<head>
+  <script data-require="angular.js@1.2.5" data-semver="1.2.5" src="https://code.angularjs.org/1.2.5/angular.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="directive2_script.js"></script>
+</head>
+
+<body ng-controller="MainController">
+  <div>
+    {{error}}
+  </div>
+
+  {{username}}
+
+  <form name="searchUser" ng-submit="search(username)">
+    <input type="search" required placeholder="User to find" ng-model="username" />
+    <input type="submit" value="Search now" />
+  </form>
+
+  <div>
+    <h2>{{user.name}}</h2>
+    <img ng-src="{{user.avatar_url}}" title="{{user.name}}" width="5%" height="5%" />
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Stars</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="repo in repos | orderBy: '-stargazers_count'">
+        <!-- filter as uppercase-->
+        <td>{{repo.name | uppercase }}</td>
+        <td>{{repo.stargazers_count | number}}</td>
+
+        <!-- filter as lowercase-->
+        <td>{{repo.language | lowercase }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+</html>
