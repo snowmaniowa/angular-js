@@ -15,3 +15,24 @@ AngularJS provides filters to transform data:
 - number Format a number to a string.
 - orderBy Orders an array by an expression.
 - uppercase Format a string to upper case.
+
+DIRECTIVES
+- Binding directives  {{}}
+- Model directives      ng-model
+- Event directives      ng-click, ng-submit    
+- Display directives    ng-repeat
+np-view, np-controller
+
+Controller-->Services-->Model-->Directives-->View
+
+SERVICES (inbuilt services... starts with $ symbol)
+$http
+$interval
+$timeout
+$log
+$animate
+$location
+$browser
+$window
+$routeProvider
+$routeParams
