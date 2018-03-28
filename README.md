@@ -1,5 +1,7 @@
 # angular-js
-AngularJS code
+AngularJS code 
+
+Refer: scott allen (plural sight)
 
 All examples use:  angular.js@1.2.5
 

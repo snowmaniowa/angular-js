@@ -3,8 +3,11 @@
 <html ng-app="githubViewerModule">
 
 <head>
-  <script data-require="angular.js@1.2.5" data-semver="1.2.5" src="https://code.angularjs.org/1.2.5/angular.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@1.2.5" 
+          data-semver="1.2.5" 
+          src="https://code.angularjs.org/1.2.5/angular.js"></script>
+  
+          <link rel="stylesheet" href="style.css" />
   <script src="directive1_script.js"></script>
 </head>
 
@@ -13,16 +16,17 @@
     {{error}}
   </div>
 
-  {{username}}
-
+  Example: {{username}}
+<br>
+<br>
   <!-- Directive:  ng-app -->
   <!-- Directive:  ng-controller -->
   <!-- Directive:  ng-submit -->
   <!-- Directive:  ng-model -->
 
-  <form name="searchUser" ng-submit="search(username)">
-    <input type="search" required placeholder="User to find" ng-model="username" />
-    <input type="submit" value="Search now" />
+  <form name="searchUser" ng-submit="searchFunction(username)">
+    <input type="search" ng-model="username" placeholder="User to find"  required />
+    <input type="submit" value="Enter your Github username" />
   </form>
 
   <div>

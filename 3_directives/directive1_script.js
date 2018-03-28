@@ -17,7 +17,7 @@
       };
   
   
-      $scope.search = function (username) {
+      $scope.searchFunction = function (username) {
         $http.get("https://api.github.com/users/" + username)
           .then(onUserComplete, onUserError);
       };
