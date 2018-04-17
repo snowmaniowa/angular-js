@@ -1,38 +1,22 @@
 <!DOCTYPE html>
-
 <html ng-app="githubViewerModule">
-
 <head>
-  <script data-require="angular.js@1.2.5" 
-          data-semver="1.2.5" 
-          src="https://code.angularjs.org/1.2.5/angular.js"></script>
-  
-          <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@1.2.5" data-semver="1.2.5" 
+          src="https://code.angularjs.org/1.2.5/angular.js"></script>  
+    <link rel="stylesheet" href="style.css" />
   <script src="directive1_script.js"></script>
 </head>
-
 <body ng-controller="MainController">
-  <div>
-    {{error}}
-  </div>
-
-  Example: {{username}}
-<br>
-<br>
-  <!-- Directive:  ng-app -->
-  <!-- Directive:  ng-controller -->
-  <!-- Directive:  ng-submit -->
-  <!-- Directive:  ng-model -->
-
-  <form name="searchUser" ng-submit="searchFunction(username)">
-    <input type="search" ng-model="username" placeholder="User to find"  required />
-    <input type="submit" value="Enter your Github username" />
+  <div>{{error}}</div>  
+  <br>Example: {{userNameVar}}<br><br>
+  <!-- Directives used in this page:  ng-app, ng-controller, ng-submit, ng-model -->
+  <form name="searchUser" ng-submit="searchUsersFunction(userNameVar)">
+    <input type="search" ng-model="userNameVar" placeholder="Enter github username :)"  required />
+    <input type="submit" value="Enjoy" />
   </form>
-
   <div>
-    <h2>{{user.name}}</h2>
-    <img ng-src="{{user.avatar_url}}" title="{{user.name}}" width="5%" height="5%" />
+    <h2>{{gitAccountDo.name}}</h2>
+    <img ng-src="{{gitAccountDo.avatar_url}}" title="{{gitAccountDo .name}}" width="5%" height="5%" />
   </div>
 </body>
-
 </html>

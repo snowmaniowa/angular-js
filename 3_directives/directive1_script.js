@@ -1,32 +1,23 @@
-//IIFE
-(function () {
-
+(function () {  //IIFE
     //create a module (usually this is done in a different JS file)
-    //give a name to module
-    //pass dependency parameter
+    //give a name to module & pass dependency parameter
     var app = angular.module("githubViewerModule", []);
   
-    var MainController = function ($scope, $http) {
-  
-      var onUserComplete = function (response) {
-        $scope.user = response.data;
+    var MainController_step1 = function ($scope, $http) {
+      $scope.userNameVar = "snowmaniowa";
+      $scope.searchUsersFunction = function (userNameVar) {
+        $http.get("https://api.github.com/users/" + userNameVar)
+          .then(onUserComplete_step3a, onUserError_step3b);
+      };     
+      var onUserComplete_step3a = function (response) {
+        $scope.gitAccountDo = response.data;
       };
-  
-      var onUserError = function () {
+        var onUserError_step3b = function () {
         $scope.error = "Cannot not fetch the data. Please check URL or username."
       };
-  
-  
-      $scope.searchFunction = function (username) {
-        $http.get("https://api.github.com/users/" + username)
-          .then(onUserComplete, onUserError);
-      };
-      $scope.username = "snowmaniowa";
-      $scope.message = "GitHub Viewer";
-    };
-  
+    }; 
+
     //app.controller("MainController", MainController);
-    app.controller("MainController", ["$scope", "$http", MainController]);
-  
+    app.controller("MainController", ["$scope", "$http", MainController_step1]);
   }());  //IIFE
   
