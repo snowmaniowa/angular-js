@@ -6,7 +6,7 @@
     var MainController_step1 = function ($scope, $http) {
       $scope.userNameVar = "snowmaniowa";
       $scope.searchUsersFunction = function (userNameVar) {
-        $http.get("https://api.github.com/users/" + userNameVar)
+        $http.get("https://api.github.com/users/" + userNameVar)  //REST URL
           .then(onUserComplete_step3a, onUserError_step3b);
       };     
       var onUserComplete_step3a = function (response) {

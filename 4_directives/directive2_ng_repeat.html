@@ -1,34 +1,22 @@
 <!DOCTYPE html>
-
-<html ng-app="githubViewerModule">
-
+<html ng-app="santhaModule_103">
 <head>
   <script data-require="angular.js@1.2.5" data-semver="1.2.5" src="https://code.angularjs.org/1.2.5/angular.js"></script>
-  <link rel="stylesheet" href="style.css" />
   <script src="directive2_script.js"></script>
 </head>
 
-<body ng-controller="MainController">
-  <div>
-    {{error}}
-  </div>
+<body ng-controller="SanthaController">
+  <div>{{error}}</div><br>
+  <!-- Directive:  ng-app, ng-controller, ng-submit, ng-model, ng-repeat -->
 
-  {{username}}
-
-  <!-- Directive:  ng-app -->
-  <!-- Directive:  ng-controller -->
-  <!-- Directive:  ng-submit -->
-  <!-- Directive:  ng-model -->
-  <!-- Directive:  ng-repeat -->
-
-  <form name="searchUser" ng-submit="search(username)">
-    <input type="search" required placeholder="User to find" ng-model="username" />
+  <form name="searchUser" ng-submit="getUserRepos(userNameVar)">
+    <input type="search" ng-model="userNameVar" placeholder="Please enter something :)" required/>
     <input type="submit" value="Search now" />
   </form>
 
   <div>
-    <h2>{{user.name}}</h2>
-    <img ng-src="{{user.avatar_url}}" title="{{user.name}}" width="5%" height="5%" />
+    <h2>{{gitAccountDo.name}}</h2>
+    <img ng-src="{{gitAccountDo.avatar_url}}" title="{{gitAccountDo.name}}" width="5%" height="5%" />
   </div>
 
   <table>
@@ -49,5 +37,4 @@
   </table>
 
 </body>
-
 </html>
